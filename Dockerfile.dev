@@ -1,0 +1,14 @@
+# Base image
+FROM node:alpine
+
+# Copy files - everything from current working directory 
+# simpleweb to current working directory inside the container
+WORKDIR '/app'
+COPY package.json .
+
+# Install dependencies
+RUN npm install
+COPY . .
+
+# Default command
+CMD [ "npm", "run", "start"]
