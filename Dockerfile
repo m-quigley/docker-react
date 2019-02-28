@@ -15,5 +15,7 @@ RUN npm run build
 
 ### NEXT PHASE ###
 FROM nginx
+EXPOSE 80
+
 # Copy the built artefacts from a different phase into the nginx server folder
 COPY --from=builder /app/build /usr/share/nginx/html

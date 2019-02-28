@@ -7,7 +7,7 @@ before_install:
 
 script:
   - docker run thenullone/docker-react npm run test -- --coverage
-
+  
 deploy: 
   - provider: elasticbeanstalk
   - region: "us-east-2"
@@ -20,3 +20,5 @@ deploy:
   access-key-id: $aws-access-key-id
   secret-access-key: 
     secure: "$secret-access-key"
+
+    #
